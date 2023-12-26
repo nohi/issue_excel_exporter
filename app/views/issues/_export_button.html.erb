@@ -1,0 +1,11 @@
+<script type="text/javascript">
+    <%
+    proj = params[:project_id]
+    params = request.query_parameters.except(:page, :format).merge(:project_id => proj, :controller => 'issue_excel_exporter', :action => 'export')
+    %>
+    //<![CDATA[
+    $('p.other-formats').first().append('' +
+        '<%= tag.span (link_to 'Excel', params, {:rel => 'nofollow'}) %>'
+    );
+    //]]>
+</script>
