@@ -4,7 +4,7 @@ class IssueExcelExporterController < ApplicationController
   include QueriesHelper
 
   def export
-    @project = Project.find(params[:project_id])
+    @project = Project.find_by(identifier: params[:project_id])
     
     use_session = false
     retrieve_default_query(use_session)
